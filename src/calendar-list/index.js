@@ -41,7 +41,8 @@ class CalendarList extends Component {
         // Dynamic calendar height
         calendarHeight: PropTypes.number,
 
-        listHeaderComponent: PropTypes.func
+        listHeaderComponent: PropTypes.func,
+        rerenderDay: PropTypes.bool
     };
 
     static defaultProps = {
