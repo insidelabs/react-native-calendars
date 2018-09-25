@@ -372,6 +372,21 @@ export default class AgendaView extends Component {
       left: (this.viewWidth - 80) / 2,
     };
 
+    const shadowContainer = [
+      ...headerStyle,
+      {
+        overflow: 'visible',
+        shadowColor: '#231f20',
+        backgroundColor: '#FFFFFF',
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        shadowOffset: {
+          height: 3,
+          width: 0,
+        }
+      }
+    ];
+
     let knob = (<View style={this.styles.knobContainer}/>);
 
     if (!this.props.hideKnob) {
@@ -388,6 +403,7 @@ export default class AgendaView extends Component {
         <View style={this.styles.reservations}>
           {this.renderReservations()}
         </View>
+        <Animated.View style={shadowContainer}/>
         <Animated.View style={headerStyle}>
           <Animated.View style={{flex:1, transform: [{ translateY: contentTranslate }]}}>
             <CalendarList
